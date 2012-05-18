@@ -118,7 +118,7 @@
         return files.get(idx);
       });
       form.remove();
-      iframe.attr("src", "javascript:false;").remove();
+      iframe.attr("src", "javascript:(function(){document.domain=\"www.dev-startwire.com\";});").remove();
     }
 
     // Remove "iframe" from the data types list so that further processing is
@@ -209,7 +209,7 @@
         // aborted.
         abort: function() {
           if (iframe !== null) {
-            iframe.unbind("load").attr("src", "javascript:false;");
+            iframe.unbind("load").attr("src", "javascript:(function(){document.domain=\"www.dev-startwire.com\";});");
             cleanUp();
           }
         }
