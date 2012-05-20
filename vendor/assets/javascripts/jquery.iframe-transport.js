@@ -118,7 +118,7 @@
         return files.get(idx);
       });
       form.remove();
-      iframe.attr("src", 'www.dev-startwire.com/profile/render_nothing').remove();
+      iframe.attr("src", 'http://www.dev-startwire.com/profile/render_nothing').remove();
     }
 
     // Remove "iframe" from the data types list so that further processing is
@@ -166,7 +166,7 @@
         // The `send` function is called by jQuery when the request should be
         // sent.
         send: function(headers, completeCallback) {
-          iframe = $("<iframe src='www.dev-startwire.com/profile/render_nothing' name='" + name +
+          iframe = $("<iframe src='http://www.dev-startwire.com/profile/render_nothing' name='" + name +
             "' style='display:none'></iframe>");
 
           // The first load event gets fired after the iframe has been injected
@@ -209,7 +209,7 @@
         // aborted.
         abort: function() {
           if (iframe !== null) {
-            iframe.unbind("load").attr("src", 'www.dev-startwire.com/profile/render_nothing');
+            iframe.unbind("load").attr("src", 'http://www.dev-startwire.com/profile/render_nothing');
             cleanUp();
           }
         }
